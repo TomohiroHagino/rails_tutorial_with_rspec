@@ -9,7 +9,6 @@ Things you may want to cover:
 
 * Rails 5.2.4.1
 
-* Gemfileの設定はrailsチュートリアルのやつを丸コピしないことが重要。
-sqliteの場所を移動させて,jquery-railsとpgを別途インストールする。
+* Gemfileの設定はrailsチュートリアルからすこし編集しているのと、バージョンが全然違うと思うので注意する。
 
 
