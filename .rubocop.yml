@@ -1,0 +1,115 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+
+# This file overrides https://github.com/bbatsov/rubocop/blob/master/config/default.yml
+
+AllCops:
+  TargetRubyVersion: 2.6
+  TargetRailsVersion: 5.2
+  DisplayCopNames: true
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+
+Rails:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - config/**/*
+    - db/schema.rb
+    - config/routes.rb
+    - lib/tasks/**/*.rake
+
+Metrics/ClassLength:
+  CountComments: false
+  Max: 300
+
+Metrics/CyclomaticComplexity:
+  Max: 30
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 30
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatString:
+  EnforcedStyle: "percent"
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: true
+
+Style/WhileUntilModifier:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/MixinUsage:
+  Description: 'Checks that `include`, `extend` and `prepend` exists at the top level.'
+  Enabled: true
+  Exclude:
+    - 'bin/**/*'
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# has_ から始まるメソッドは許可する
+Naming/PredicateName:
+  NamePrefixBlacklist:
+    - "is_"
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Rails/BulkChangeTable:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - production
+    - staging
