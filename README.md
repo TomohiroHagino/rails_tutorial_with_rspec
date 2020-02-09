@@ -13,4 +13,5 @@ Things you may want to cover:
 
 * TDD（テスト駆動開発）の勉強、テストファーストを理解する。
 
+* ついでにRubocopの設定にも慣れておく
 
